@@ -6,7 +6,7 @@ export const signup = (user) =>(
   })
 );
 
-export const signin = (user) =>(
+export const login = (user) =>(
   $.ajax({
     method: 'post',
      url: '/api/session/',
