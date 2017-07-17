@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170715235656) do
+ActiveRecord::Schema.define(version: 20170716224253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 20170715235656) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
+  end
+
+  create_table "widgets", force: :cascade do |t|
+    t.string   "location",        null: false
+    t.string   "widgetable_type"
+    t.integer  "widgetable_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["location", "widgetable_id", "widgetable_type"], name: "index_widgets_on_location_and_widgetable_id_and_widgetable_type", unique: true, using: :btree
+    t.index ["widgetable_type", "widgetable_id"], name: "index_widgets_on_widgetable_type_and_widgetable_id", using: :btree
   end
 
 end
