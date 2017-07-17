@@ -10,11 +10,12 @@ class BenchIndex extends React.Component {
   render () {
     return (
       <div>
-        <h1>Widgets: </h1>
-        { this.props.widgets.map(widget => (
-          <WidgetIndexItem widget={widget} deleteWidget={this.props.deleteWidget} key={widget.id} />
-        ))}
-        <WidgetFormContainer />
+        <div className="widget-container">
+          { this.props.widgets.map(widget => (
+            <WidgetIndexItem widget={widget} deleteWidget={this.props.deleteWidget} key={widget.id} />
+          ))}
+          <WidgetFormContainer />
+        </div>
       </div>
     );
   }

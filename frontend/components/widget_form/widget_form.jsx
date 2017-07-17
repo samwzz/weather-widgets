@@ -31,8 +31,8 @@ class WidgetForm extends React.Component {
     return(
       <form className="widget-form" onSubmit={ this.handleSubmit }>
         <h3 className="form-title">Create New Widget</h3>
-        <label>
-          Location:
+        <label className="input-label">
+          <span>Location:</span>
           <input className="input"
             value={ this.state.location }
             onChange={ this.update('location') }
