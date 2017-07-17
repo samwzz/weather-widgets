@@ -15,6 +15,7 @@ const WidgetReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_WIDGETS:
+      console.log(action.widgets);
       return action.widgets;
     case RECEIVE_WIDGET:
       const newWidget = {[action.widget.id]: action.widget};

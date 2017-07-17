@@ -1,7 +1,7 @@
 export const fetchUserWidgets = (userId) => (
   $.ajax({
     method: 'GET',
-    url: `api/user/${userId}/widgets`
+    url: `api/users/${userId}/widgets`
   })
 );
 
