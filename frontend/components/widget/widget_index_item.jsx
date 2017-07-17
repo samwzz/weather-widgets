@@ -44,6 +44,7 @@ class WidgetIndexItem extends React.Component {
                  <p>{weather.name}</p>
                  <p>{temp.toFixed(1)} F</p>
                  <p>{weather.weather[0].description}</p>
+                 <i className="wi wi-day-sunny"></i>
                </div>;
     } else {
      content = <div className='loading'>loading weather...</div>;
