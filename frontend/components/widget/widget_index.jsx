@@ -1,5 +1,6 @@
 import React from 'react';
 import WidgetIndexItem from './widget_index_item';
+import WidgetFormContainer from '../widget_form/widget_form_container';
 
 class BenchIndex extends React.Component {
   componentWillMount() {
@@ -11,8 +12,9 @@ class BenchIndex extends React.Component {
       <div>
         <h1>Widgets: </h1>
         { this.props.widgets.map(widget => (
-          <WidgetIndexItem widget={widget} key={widget.id} />
+          <WidgetIndexItem widget={widget} deleteWidget={this.props.deleteWidget} key={widget.id} />
         ))}
+        <WidgetFormContainer />
       </div>
     );
   }

@@ -7,6 +7,7 @@ class WidgetIndexItem extends React.Component {
     this.state = {
       weather: null
     };
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -27,6 +28,12 @@ class WidgetIndexItem extends React.Component {
     xmlhttp.send();
   }
 
+  handleDelete(e) {
+    e.preventDefault();
+    const { widget, deleteWidget } = this.props;
+    deleteWidget(widget);
+  }
+
   render() {
     let content = <div></div>;
     console.log(this.state.weather);
@@ -43,9 +50,11 @@ class WidgetIndexItem extends React.Component {
     }
     return (
       <div className="weather-container">
-        <h1>Weather</h1>
           <div className='weather'>
             {content}
+            <button className="delete-button" onClick={ this.handleDelete }>
+              Delete
+            </button>
           </div>
       </div>
     );

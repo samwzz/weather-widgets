@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchUserWidgets } from '../../actions/widget_actions';
+import { fetchUserWidgets, deleteWidget } from '../../actions/widget_actions';
 import WidgetIndex from './widget_index';
 import { selectWidgets } from '../../reducers/selectors';
 
@@ -9,7 +9,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchUserWidgets: (userId) => dispatch(fetchUserWidgets(userId))
+  fetchUserWidgets: (userId) => dispatch(fetchUserWidgets(userId)),
+  deleteWidget: widget => dispatch(deleteWidget(widget))
 });
 
 export default connect(
