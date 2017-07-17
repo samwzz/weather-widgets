@@ -1,4 +1,4 @@
-class WidgetsController < ApplicationController
+class Api::WidgetsController < ApplicationController
   def index
     if params.key?(:user_id)
       @widgets = User.find_by(id: params[:user_id]).widgets
@@ -7,9 +7,6 @@ class WidgetsController < ApplicationController
     end
 
     render :index
-  end
-
-  def show
   end
 
   def create

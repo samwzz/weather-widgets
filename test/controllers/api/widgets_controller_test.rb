@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class WidgetsControllerTest < ActionDispatch::IntegrationTest
+class Api::WidgetsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
