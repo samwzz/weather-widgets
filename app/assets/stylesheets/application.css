@@ -24,6 +24,10 @@
           box-sizing: border-box;
  }
 
+ html {
+   background-color: #f7f8fa;
+ }
+
  header {
   display: flex;
   justify-content: space-between;
@@ -35,7 +39,6 @@
  }
 
  body {
-   background-color: white;
    font-family: sans-serif;
    font-size: 20px;
  }
@@ -54,9 +57,15 @@
     margin: 25px;
     width: 300px;
     height: 150px;
-    border: 2px solid black;
+    border: 2px solid #212124;
     border-radius: 5px;
     transition: transform 0.3s;
+    background-color: white;
+  }
+
+  .delete-button {
+    display: flex;
+    align-self: center;
   }
 
   .weather-container:hover {
@@ -71,6 +80,29 @@
    padding: 5px;
  }
 
+ .weather-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ i {
+   font-size: 100px;
+   color: #212124;
+ }
+
+ .temp {
+   color: orange;
+ }
+
+ .desc {
+   color: #0099e5;
+ }
+
+ .name {
+   font-size: 30px;
+ }
+
  .widget-form {
    display: flex;
    flex-direction: column;
@@ -82,6 +114,7 @@
    margin: 25px;
    height: 150px;
    width: 300px;
+   background-color: white;
  }
 
  .input {

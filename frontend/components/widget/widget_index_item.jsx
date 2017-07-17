@@ -34,18 +34,45 @@ class WidgetIndexItem extends React.Component {
     deleteWidget(widget);
   }
 
+  renderIcon() {
+    let weather = this.state.weather;
+    let icon = <div></div>;
+    switch (weather.weather[0].main) {
+      case "Clear":
+        icon = <div><i className="wi wi-day-sunny"></i></div>;
+        break;
+      case "Clouds":
+        icon = <div><i className="wi wi-cloudy"></i></div>;
+        break;
+      case "Mist":
+        icon = <div><i className="wi wi-fog"></i></div>;
+        break;
+      case "Haze":
+        icon = <div><i className="wi wi-day-haze"></i></div>;
+        break;
+      case "Rain":
+        icon = <div><i className="wi wi-rain"></i></div>;
+        break;
+      default:
+        icon = <div><i className="wi wi-day-sunny"></i></div>;
+    }
+    return icon;
+  }
+
   render() {
     let content = <div></div>;
     console.log(this.state.weather);
     if (this.state.weather) {
       let weather = this.state.weather;
       let temp = (weather.main.temp - 273.15) * 1.8 + 32;
-      content = <div className="weather-info">
-                 <p>{weather.name}</p>
-                 <p>{temp.toFixed(1)} F</p>
-                 <p>{weather.weather[0].description}</p>
-                 <i className="wi wi-day-sunny"></i>
-               </div>;
+      content = <div className="weather-content">
+                  <div className="weather-info">
+                    <p className="name">{weather.name}</p>
+                    <p className="temp">{temp.toFixed(1)} F</p>
+                    <p className="desc">{weather.weather[0].main}</p>
+                  </div>
+                  {this.renderIcon()}
+                </div>;
     } else {
      content = <div className='loading'>loading weather...</div>;
     }
@@ -54,7 +81,7 @@ class WidgetIndexItem extends React.Component {
           <div className='weather'>
             {content}
             <button className="delete-button" onClick={ this.handleDelete }>
-              Delete
+              Remove
             </button>
           </div>
       </div>
