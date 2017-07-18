@@ -53,6 +53,9 @@ class WidgetIndexItem extends React.Component {
       case "Rain":
         icon = <div><i className="wi wi-rain"></i></div>;
         break;
+      case "Thunderstorm":
+        icon = <div><i className="wi wi-thunderstorm"></i></div>;
+        break;
       default:
         icon = <div><i className="wi wi-day-sunny"></i></div>;
     }

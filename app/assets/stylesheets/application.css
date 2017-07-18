@@ -14,7 +14,7 @@
  *= require_self
  */
 
- html, body, p, ul, h1, h2, h3, button {
+ html, body, form, p, ul, h1, h2, h3, button {
    margin: 0;
    padding: 0;
    border: 0;
@@ -107,7 +107,6 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   align-items: flex-start;
    border: 2px solid black;
    border-radius: 5px;
    padding: 25px;
@@ -135,4 +134,47 @@
    padding: 5px;
    border-radius: 5px;
    cursor: pointer;
+   transition: background-color 0.2s;
+ }
+
+ button:hover {
+   background-color: #b9c1c7;
+ }
+
+ .login-form-container {
+   display: flex;
+   justify-content: center;
+   margin-top: 100px;
+ }
+
+ .login-form-box {
+   border: 1px solid black;
+   border-radius: 5px;
+   width: 325px;
+   padding: 25px;
+   background-color: white;
+ }
+
+ .login-form {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+ }
+
+ .login-input {
+   margin-left: 20px;
+   width: 145px;
+ }
+
+ .label {
+   display: inline-block;
+   width: 100px;
+ }
+
+ .input {
+   width: 145px;
+ }
+
+ .form-title {
+   text-align: center;
  }
