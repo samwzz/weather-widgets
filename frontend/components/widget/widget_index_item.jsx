@@ -64,7 +64,6 @@ class WidgetIndexItem extends React.Component {
 
   render() {
     let content = <div></div>;
-    console.log(this.state.weather);
     if (this.state.weather) {
       let weather = this.state.weather;
       let temp = (weather.main.temp - 273.15) * 1.8 + 32;
